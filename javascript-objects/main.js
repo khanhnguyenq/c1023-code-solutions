@@ -24,7 +24,7 @@ const vehicle = {
 };
 
 vehicle['color'] = 'orange';
-vehicle['isCovertible'] = false;
+vehicle['isConvertible'] = false;
 
 console.log('value of vehicle["color"]: ', vehicle['color']);
 console.log('value of vehicle["isConvertible"]: ', vehicle['isConvertible']);
