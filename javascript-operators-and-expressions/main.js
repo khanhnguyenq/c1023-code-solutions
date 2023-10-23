@@ -6,8 +6,8 @@ console.log('value of area: ', area);
 console.log('typeof area: ', typeof area);
 
 const bill = 100;
-const payment = 67;
-const change = bill - payment;
+const payment = 167;
+const change = payment - bill;
 
 console.log('value of change: ', change);
 console.log('typeof change: ', typeof change);
