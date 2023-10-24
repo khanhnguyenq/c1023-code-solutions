@@ -34,15 +34,4 @@ const orderHistory = [
     itemType: [['gaming accessories'], ['book']],
     price: [94.95, 33.99],
   },
-  {
-    placedDate: 'July 3, 2020',
-    deliveredDate: 'July 5, 2020',
-    orderID: '113-2883177-2648248',
-    itemName: 'The Art of Sql',
-    itemType: 'book',
-    price: 33.99,
-  },
 ];
-
-console.log('secondItemInOrder name:', orderHistory[3].itemName[1]);
-console.log('firstItemInOrder price:', orderHistory[3].price[0]);
