@@ -27,10 +27,12 @@ const orderHistory = [
     placedDate: 'July 3, 2020',
     deliveredDate: 'July 5, 2020',
     orderID: '113-2883177-2648248',
-    itemName:
-      'Gamecube Controller - Super Smash Bros. Edition (Nintendo Switch)',
-    itemType: 'gaming accessories',
-    price: 94.95,
+    itemName: [
+      ['Gamecube Controller - Super Smash Bros. Edition (Nintendo Switch)'],
+      ['The Art of Sql'],
+    ],
+    itemType: [['gaming accessories'], ['book']],
+    price: [94.95, 33.99],
   },
   {
     placedDate: 'July 3, 2020',
@@ -41,3 +43,6 @@ const orderHistory = [
     price: 33.99,
   },
 ];
+
+console.log('secondItemInOrder name:', orderHistory[3].itemName[1]);
+console.log('firstItemInOrder price:', orderHistory[3].price[0]);
