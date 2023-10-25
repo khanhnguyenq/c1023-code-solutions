@@ -20,7 +20,7 @@ console.log('isUnderFive(4) value:', isUnderFive(4));
 console.log('isUnderFive(10) value:', isUnderFive(10));
 
 function isEven(num) {
-  if (num % 2) {
+  if (num % 2 === 0) {
     return true;
   } else {
     return false;
