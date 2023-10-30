@@ -47,17 +47,17 @@ function titleCase(title) {
       tempStr3 = tempStr2;
     }
   }
-
-  // let tempStr4 = '';
-  // for (let i = 0; i < tempStr3.length; i++) {
-  //   if (tempStr3[i] === ':') {
-  //     tempStr4 = tempStr3.replace(
-  //       tempStr3[i + 2],
-  //       tempStr3[i + 2].toUpperCase()
-  //     );
-  //   } else {
-  //     tempStr4 = tempStr3;
-  //   }
-  // }
-  return tempStr3;
+  let tempStr4 = '';
+  let colonIndex = 0;
+  if (tempStr3.includes(':')) {
+    colonIndex = tempStr3.indexOf(':');
+    tempStr4 =
+      tempStr3.substring(0, colonIndex) +
+      ': ' +
+      tempStr3.charAt(colonIndex + 2).toUpperCase() +
+      tempStr3.substring(colonIndex + 3, tempStr3.length);
+  } else {
+    tempStr4 = tempStr3;
+  }
+  return tempStr4;
 }
