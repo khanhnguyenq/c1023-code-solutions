@@ -1,0 +1,12 @@
+body > h1 {
+  font-family: Poppins;
+}
+
+body h2,
+p {
+  font-family: Playpen Sans;
+}
+
+body {
+  line-height: 1.75rem;
+}
