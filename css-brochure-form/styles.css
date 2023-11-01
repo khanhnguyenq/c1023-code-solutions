@@ -1,0 +1,39 @@
+* {
+  font-family: 'Brandon Grotesque', sans-serif;
+}
+
+label {
+  font-size: 0.6rem;
+  width: 300px;
+  margin-left: 7px;
+}
+
+.custom-width {
+  width: 300px;
+}
+
+.learn-more {
+  font-weight: bold;
+  color: #f5a8a4;
+  width: 300px;
+  text-align: center;
+}
+
+body input,
+select {
+  margin: 0.25rem;
+}
+
+input.submit {
+  border: solid 3px transparent;
+  border-radius: 10px;
+  width: 75px;
+  color: #fff;
+  background-color: #ec5d58;
+  text-transform: uppercase;
+}
+
+div.submit {
+  width: 300px;
+  text-align: right;
+}

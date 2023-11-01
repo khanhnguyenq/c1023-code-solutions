@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Challenge - Brochure Form</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="learn-more">
+      <p>LEARN MORE</p>
+    </div>
+    <form>
+      <div class="email">
+        <div class="align-left">
+          <label for="email"> COMPANY EMAIL </label>
+        </div>
+        <div>
+          <input
+            class="custom-width"
+            type="email"
+            name="company-email"
+            id="email"
+            placeholder="khanh@company.co" />
+        </div>
+      </div>
+      <div class="user-name">
+        <div>
+          <div class="align-left">
+            <label for="name"> NAME </label>
+          </div>
+          <div>
+            <input
+              class="custom-width"
+              type="text"
+              placeholder="Khanh Nguyen"
+              id="name" />
+          </div>
+        </div>
+        <div class="location">
+          <div class="align-left">
+            <label for="place"> WHERE ARE YOU HIRING? </label>
+          </div>
+          <div>
+            <input
+              class="custom-width"
+              type="text"
+              id="place"
+              placeholder="City, Country" />
+          </div>
+        </div>
+        <div class="how-many">
+          <div class="align-left">
+            <label for="how-many">
+              HOW MANY ENGINEERS ARE YOU HITING IN THE NEXT 6 MONTHS?
+            </label>
+          </div>
+          <div>
+            <select class="custom-width" name="how-many" id="how-many">
+              <option value="1-2">1-2 Engineers</option>
+              <option value="3-5">3-5 Engineers</option>
+              <option value="5-10">5-10 Engineers</option>
+              <option value="10+">10+ Engineers</option>
+            </select>
+          </div>
+        </div>
+        <div class="submit">
+          <input class="submit" type="submit" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
