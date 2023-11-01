@@ -5,8 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is a pseudo-class?
-
+  it's a selector that selects elements that are in a specific state, like first element of their type
 - What are CSS pseudo-classes useful for?
+  they can be used to add hover effects or target a specific element
 
 ## Notes
 
