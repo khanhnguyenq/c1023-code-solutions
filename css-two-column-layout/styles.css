@@ -1,0 +1,58 @@
+body {
+  font-family: karla, sans-serif;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  line-height: 30px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.center-content {
+  margin: 15px auto;
+}
+
+.w-700 {
+  width: 70%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-half {
+  display: flex;
+  flex-basis: 50%;
+}
+
+.column-fourth {
+  flex-basis: 25%;
+}
+
+.column-three-fourth {
+  flex-basis: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.w-300 {
+  width: 80%;
+}
+
+.button {
+  text-transform: uppercase;
+  background-color: #fff;
+  color: red;
+  border: solid red;
+  width: 175px;
+  height: 35px;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0;
+}
