@@ -144,8 +144,8 @@
   padding-left: 50px;
 }
 
-.margin-top-70 {
-  margin-top: 70px;
+.margin-top-90 {
+  margin-top: 90px;
 }
 
 .line-height-20 {
@@ -168,10 +168,23 @@
   color: #525351;
 }
 
-.h-300 {
-  height: 300px;
+.h-350 {
+  height: 350px;
 }
 
-.margin-top-50 {
-  margin-top: 50px;
+.margin-top-80 {
+  margin-top: 80px;
+}
+
+.h-150 {
+  height: 150px;
+}
+
+.margin-top-40 {
+  margin-top: 40px;
+}
+
+.canvas {
+  color: #0a4265;
+  margin-top: 15px;
 }
