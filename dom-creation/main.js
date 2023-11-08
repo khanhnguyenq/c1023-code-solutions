@@ -68,34 +68,34 @@ const pokedex = [
 
 function renderPokemon(pokemon) {
   // creating new div and setting class attribute
-  const newDiv = document.createElement('div');
-  newDiv.setAttribute('class', 'column-third');
+  const $newDiv = document.createElement('div');
+  $newDiv.setAttribute('class', 'column-third');
   // creating div child, setting class attribute, and adding to new div
-  const innerDiv = document.createElement('div');
-  innerDiv.setAttribute('class', 'pokemon-card');
-  newDiv.appendChild(innerDiv);
+  const $innerDiv = document.createElement('div');
+  $innerDiv.setAttribute('class', 'pokemon-card');
+  $newDiv.appendChild($innerDiv);
   // creating img element, adding src attribute, and adding it to inner div
-  const newImg = document.createElement('img');
-  newImg.setAttribute('src', pokemon.imageUrl);
-  innerDiv.appendChild(newImg);
+  const $newImg = document.createElement('img');
+  $newImg.setAttribute('src', pokemon.imageUrl);
+  $innerDiv.appendChild($newImg);
   // creating a new div to be child of inner div
-  const siblingDiv = document.createElement('div');
-  siblingDiv.setAttribute('class', 'pokemon-card-text');
-  innerDiv.appendChild(siblingDiv);
+  const $siblingDiv = document.createElement('div');
+  $siblingDiv.setAttribute('class', 'pokemon-card-text');
+  $innerDiv.appendChild($siblingDiv);
   // creating h2 for pokemon's name
-  const pokemonName = document.createElement('h2');
-  pokemonName.textContent = pokemon.name;
-  siblingDiv.appendChild(pokemonName);
+  const $pokemonName = document.createElement('h2');
+  $pokemonName.textContent = pokemon.name;
+  $siblingDiv.appendChild($pokemonName);
   // creating h3 for pokemon's number
-  const pokemonNum = document.createElement('h3');
-  pokemonNum.textContent = pokemon.number;
-  siblingDiv.appendChild(pokemonNum);
+  const $pokemonNum = document.createElement('h3');
+  $pokemonNum.textContent = pokemon.number;
+  $siblingDiv.appendChild($pokemonNum);
   // creating p for pokemon's description
-  const pokemonDesc = document.createElement('p');
-  pokemonDesc.textContent = pokemon.description;
-  siblingDiv.appendChild(pokemonDesc);
+  const $pokemonDesc = document.createElement('p');
+  $pokemonDesc.textContent = pokemon.description;
+  $siblingDiv.appendChild($pokemonDesc);
   // return the created newDiv
-  return newDiv;
+  return $newDiv;
 }
 
 const $row = document.querySelector('.row');
