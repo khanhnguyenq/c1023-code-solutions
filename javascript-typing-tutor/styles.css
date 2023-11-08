@@ -1,0 +1,48 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  font-family: roboto, sans-serif;
+}
+
+.phrase {
+  font-size: xx-large;
+}
+
+.incorrect {
+  color: red;
+  border-bottom: solid;
+}
+
+.correct {
+  color: green;
+}
+
+.underlined {
+  border-bottom: solid;
+}
+
+.hidden {
+  display: none;
+}
+
+.judge {
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+}
+
+.retry {
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
