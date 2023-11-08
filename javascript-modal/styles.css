@@ -1,0 +1,54 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.pop-up {
+  display: none;
+}
+
+.container-show {
+  height: 100vh;
+  width: 100vw;
+}
+
+.show {
+  height: 200px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  background-color: #fff;
+  margin-left: 300px;
+  margin-top: 150px;
+  position: relative;
+}
+
+.open-button {
+  height: 40px;
+  width: 200px;
+  background-color: #4a4ae9;
+  color: #fff;
+  font-size: x-large;
+  border-radius: 5px;
+  border: solid transparent;
+}
+
+.decline {
+  height: 30px;
+  width: 70px;
+  border: solid transparent;
+  border-radius: 5px;
+  background-color: #eb5d5d;
+  color: #fff;
+}
+
+.overlay {
+  background: rgba(50, 50, 50, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
