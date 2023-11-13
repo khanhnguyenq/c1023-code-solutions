@@ -4,7 +4,7 @@ let todos = [];
 
 const previousTodosJSON = localStorage.getItem('javascript-local-storage');
 
-if (previousTodosJSON !== 'null') {
+if (previousTodosJSON !== null) {
   todos = JSON.parse(previousTodosJSON);
 }
 
