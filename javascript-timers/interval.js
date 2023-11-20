@@ -1,14 +1,16 @@
 const $countDown = document.querySelector('.countdown-display');
 
-const intervalID = setInterval(countDown, 1000);
+const intervalID = null;
+let count = 4;
 
-function countDown(num) {
-  if (parseInt($countDown.textContent) === 1) {
+function countDown() {
+  count--;
+  if (count > 0) {
+    $countDown.textContent = count;
+  } else {
     $countDown.textContent = '~Earth Beeeelooowww Us~';
     clearInterval(intervalID);
-  } else {
-    num = parseInt($countDown.textContent);
-    num--;
-    $countDown.textContent = num;
   }
 }
+
+setInterval(countDown, 1000);
