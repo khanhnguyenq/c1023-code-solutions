@@ -17,5 +17,4 @@ class Square extends Shape {
 }
 
 const nine = new Square(9);
-console.log('nine:', nine);
 console.log('nine.describe:', nine.describe());
