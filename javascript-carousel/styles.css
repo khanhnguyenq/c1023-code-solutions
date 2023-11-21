@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  border: 2px solid #000;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.center-main {
+  justify-content: center;
+}
+
+.center-cross {
+  align-content: center;
+}
+
+.column-10 {
+  flex-basis: 10%;
+}
+
+.column-80 {
+  flex-basis: 80%;
+}
+
+.height-30 {
+  height: 30px;
+}
+
+.margin-5 {
+  margin: 0 5px;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: xxx-large;
+}
