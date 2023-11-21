@@ -28,6 +28,8 @@ $forward.addEventListener('click', function () {
     $cirles[currentIndex].classList.remove('fa-solid');
     $cirles[currentIndex].classList.add('fa-regular');
   }
+  clearInterval(intervalId);
+  setTimeout(setInterval(changeImage, 3000), 3000);
 });
 
 $back.addEventListener('click', function () {
@@ -46,14 +48,39 @@ $back.addEventListener('click', function () {
     $cirles[currentIndex].classList.remove('fa-solid');
     $cirles[currentIndex].classList.add('fa-regular');
   }
+  clearInterval(intervalId);
+  count--;
+  setTimeout(setInterval(changeImage, 3000), 3000);
 });
 
 $dot.addEventListener('click', function (event) {
+  let num = 0;
   for (let i = 0; i < $cirles.length; i++) {
-    $cirles[i].className = 'fa-regular fa-circle margin-5';
+    $cirles[i].className = `fa-regular fa-circle margin-5 ${num}`;
+    num++;
   }
   if (event.target.tagName === 'I') {
     event.target.classList.remove('fa-regular');
     event.target.classList.add('fa-solid');
   }
+
+  console.log('event.target:', event.target);
 });
+
+let intervalId = null;
+let count = 0;
+
+function changeImage() {
+  if (count > 4) {
+    count = 0;
+  }
+  $image.setAttribute('src', images[count]);
+  for (let i = 0; i < $cirles.length; i++) {
+    $cirles[i].className = 'fa-regular fa-circle margin-5';
+  }
+  $cirles[count].classList.remove('fa-regular');
+  $cirles[count].classList.add('fa-solid');
+  count++;
+}
+
+intervalId = setInterval(changeImage, 3000);
