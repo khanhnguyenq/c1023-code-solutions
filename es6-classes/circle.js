@@ -3,15 +3,12 @@
 
 class Circle extends Shape {
   constructor(radius) {
-    super();
+    super(radius * radius * Math.PI, radius * Math.PI * 2);
     this.radius = radius;
-    this.area = this.radius * this.radius * Math.PI;
-    this.perimeter = this.radius * Math.PI * 2;
   }
 
   describe() {
-    return `The area of the shape is ${this.area}.
-    The perimeter of the shape is ${this.perimeter}.
+    return `${super.describe()}.
     The radius of the shape is ${this.radius}.`;
   }
 }
