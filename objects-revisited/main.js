@@ -72,13 +72,15 @@ function addEmployees() {
 }
 
 function deleteEmployee(employeeName) {
+  console.log('business obj:', business);
+  // business.totalEmployees = business.totalEmployees - 1;
+  console.log('employee obj', business.employees[employeeName]);
   delete business.employees[employeeName];
-  business.totalEmployees = business.totalEmployees - 1;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   addWeekends();
   addEmployees();
-  deleteEmployee('chris');
-  console.log('business:', business);
+  deleteEmployee('dan');
+  // console.log('business:', business);
 });
