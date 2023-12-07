@@ -78,17 +78,21 @@ function addEmployees() {
       };
     }
     checkFTUpdateTotal();
+    deleteEmployee('ervin');
   });
   xhr.send();
 }
 
 function deleteEmployee(employeeName) {
-  delete business.employees[employeeName];
+  if (business.employees.hasOwnProperty(employeeName)) {
+    delete business.employees[employeeName];
+  } else {
+    console.error(`Employee ${employeeName} not found.`);
+  }
   checkFTUpdateTotal();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   addWeekends();
   addEmployees();
-  deleteEmployee('ervin');
 });
