@@ -1,0 +1,500 @@
+   62  git add object-manipulation-3
+   63  git commit -m "update"
+   64  git switch main
+   65  git branch dom-creation
+   66  git switch dom-creation
+   67  git status
+   68  git add dom-creation
+   69  git status
+   70  git commit -m "dom-creation - Khanh Nguyen"
+   71  git push origin dom-creation
+   72  git switch main
+   73  git switch dom-creation
+   74  git status
+   75  git add dom-creation
+   76  git status
+   77  git commit -m "add $ in front of variables for DOM"
+   78  git push origin dom-creation
+   79  git switch main
+   80  git pull origin main
+   81  git pull origin main
+   82  git branch --list
+   83  git branch css-media-queries
+   84  git switch css-media-queries
+   85  git status
+   86  git add css-media-queries
+   87  git status
+   88  git status
+   89  git add css-media-queries
+   90  git status
+   91  git commit -m "css-media-queries - Khanh Nguyen"
+   92  git push origin css-media-queries
+   93  git switch main
+   94  git branch css-transitions
+   95  git switch css-transitions
+   96  git status
+   97  git add css-transitions
+   98  git status
+   99  git commit -m "css-transitions - Khanh Nguyen"
+  100  git push origin css-transitions
+  101  git switch main
+  102  git branch css-transforms
+  103  git switch css-transforms
+  104  git switch main
+  105  git branch --list
+  106  git switch css-transforms
+  107  git status
+  108  git add css-transforms
+  109  git status
+  110  git status
+  111  git add css-transforms
+  112  git status
+  113  git commit -m "css-transforms - Khanh Nguyen"
+  114  git push origin css-transforms
+  115  git switch main
+  116  git branch dom-event-delegation
+  117  git switch dom-event-delegation
+  118  git status
+  119  git add dom-event-delegation
+  120  git status
+  121  git commit -m "dom-event-delegation - Khanh Nguyen"
+  122  git push origin dom-event-delegation
+  123  git status
+  124  git add dom-event-delegation
+  125  git status
+  126  git commit -m "dom-event-delegation - Khanh Nguyen"
+  127  git push origin dom-event-delegation
+  128  git switch main
+  129  git pull origin main
+  130  git switch dom-event-delegation
+  131  git switch main
+  132  git pull origin main
+  133  git branch javascript-view-swapping
+  134  git switch javascript-view-swapping
+  135  git status
+  136  git add javascript-view-swapping
+  137  git status
+  138  git commit -m "javascript-view-swapping - Khanh Nguyen"
+  139  git push origin javascript-view-swapping
+  140  git switch main
+  141  git pull origin main
+  142  git branch css-responsive-layout
+  143  git switch css-responsive-layout
+  144  git status
+  145  git add css-responsive-layout
+  146  git status
+  147  git commit -m "css-responsive-layout - Khanh Nguyen"
+  148  git push origin css-responsive-layout
+  149  git switch main
+  150  git branch javascript-and-json
+  151  git switch javascript-and-json
+  152  git status
+  153  git add javascript-and-json
+  154  git status
+  155  git commit -m "javascript-and-json - Khanh Nguyen"
+  156  git push origin javascript-and-json
+  157  git switch main
+  158  git branch javascript-local-storage
+  159  git switch javascript-local-storage
+  160  git status
+  161  git add javascript-local-storage
+  162  git status
+  163  git commit -m "javascript-local-storage - Khanh Nguyen"
+  164  git push origin javascript-local-storage
+  165  git switch main
+  166  git switch css-canvas-medical
+  167  git switch main
+  168  git switch javascript-local-storage
+  169  git status
+  170  git add javascript-local-storage
+  171  git status
+  172  git commit -m "updated line 7 to compare to null instead of string value of null"
+  173  git push origin javascript-local-storage
+  174  git switch main
+  175  git pull origin main
+  176  git pull origin main
+  177  git pull origin main
+  178  cd ..
+  179  ls
+  180  git clone git@github.com:khanhnguyenq/code-journal.git
+  181  ls
+  182  git status
+  183  git status
+  184  git add index.html
+  185  git add js
+  186  git status
+  187  git status
+  188  git add js
+  189  git status
+  190  git commit -m "Added viewSwap function to switch between entry-form and entries views #2"
+  191  git status
+  192  git add js
+  193  git status
+  194  git commit -m "Added viewSwap function to switch between entry-form and entries views #2"
+  195  git status
+  196  git add css
+  197  git add js
+  198  git add index.html 
+  199  git status
+  200  git commit -m "Added anchor to navbar to show entries view via event listening #2"
+  201  git status
+  202  git status
+  203  git status
+  204  git add css
+  205  git add index.html 
+  206  git status
+  207  git commit -m "Updated css for h3 element containing entries text content #2"
+  208  git status
+  209  git add css
+  210  git add js
+  211  git add index.html
+  212  git  status
+  213  git commit -m "Added an anchor to entry view to show entry-form #2"
+  214  git status
+  215  git add index.html 
+  216  git add js
+  217  git status
+  218  git commit -m "Added toggleNoEntries function #2"
+  219  git status
+  220  git status
+  221  git add js
+  222  git status
+  223  git commit -m "Updated submit callback to render new obj for submitted data, add the new object to the dom tree, use viewswap to show entries view, and calls toggleNoEntries function #2"
+  224  git status
+  225  git add js
+  226  git status
+  227  git commit -m "Updated DOMContentLoaded callback to use viewSwap to show view that was displayed and call toggleNoEntries #2"
+  228  git status
+  229  git status
+  230  git add css
+  231  git add index.html 
+  232  git status
+  233  git commit -m "Cleaned up CSS, tested app in private browsing, and fixed error #2"
+  234  git status
+  235  git push origin user-can-view-their-entries
+  236  git status
+  237  git add css
+  238  git add index.html 
+  239  git add js
+  240  git status
+  241  git commit -m "Updated files based on changes requested #2"
+  242  git push origin user-can-view-their-entries
+  243  git switch main
+  244  git pull origin main
+  245  git branch user-can-edit-an-entry
+  246  git branch --list
+  247  git switch user-can-edit-an-entry
+  248  git status
+  249  git status
+  250  git add css
+  251  git add js
+  252  git status
+  253  git commit -m "Updated the renderEntry function to add pencil icon and add data-entry-id #3"
+  254  git status
+  255  git add index.html 
+  256  git add js
+  257  git status
+  258  git commit -m "Added event listener to ul to switch to editing view and update the values of the inputs #3"
+  259  git status
+  260  git add js
+  261  git status
+  262  git commit -m "Updated entry form's submit handler to replace DOM tree with new data #3"
+  263  git status
+  264  git status
+  265  git add css
+  266  git add js
+  267  git status
+  268  git commit -m "Removed unnecessary CSS, tested functionality in private window, and fixed errors #3"
+  269  git status
+  270  git push origin user-can-edit-an-entry
+  271  git status
+  272  git status
+  273  git add css
+  274  git add js
+  275  git status
+  276  git commit -m "Updated code with requested changes #3"
+  277  git push origin user-can-edit-an-entry
+  278  git switch main
+  279  git pull origin main
+  280  git branch --list
+  281  git branch user-can-delete-an-entry
+  282  git branch --list
+  283  git switch user-can-delete-an-entry
+  284  git status
+  285  git add css
+  286  git add index.html 
+  287  git add js
+  288  git status
+  289  git commit -m "Added button for Delete Entry being visible only in edit view #4"
+  290  git status
+  291  git status
+  292  git add css
+  293  git add index.html 
+  294  git add js
+  295  git status
+  296  git commit -m "Added confirmation modal when delete entry is clicked #4"
+  297  git status
+  298  git add css
+  299  git add index.html 
+  300  git add js
+  301  git status
+  302  git commit -m "Added event listener to hide modal when user clicks Cancel #4"
+  303  git status
+  304  git add js
+  305  git status
+  306  git commit -m "Added event listener to confirm button to remove entry object from data.entries, remove li from DOM #4"
+  307  git status
+  308  git status
+  309  git add index.html
+  310  git status
+  311  git commit -m "removed unnecessary CSS, tested functionality in private session, and fixed errors #4"
+  312  git push origin user-can-delete-an-entry
+  313  git switch main
+  314  git switch user-can-delete-an-entry 
+  315  git switch main
+  316  cd..
+  317  cd ..
+  318  git clone git@github.com:khanhnguyenq/week-planner.git
+  319  npm install
+  320  git switch user-can-delete-an-entry
+  321  git status
+  322  git add js
+  323  git status
+  324  git commit -m "Updated confirm button in delete entry to not use loop #4"
+  325  git push origin user-can-delete-an-entry
+  326  git status
+  327  git push origin user-can-delete-an-entry
+  328  git switch main
+  329  git switch user-can-delete-an-entry 
+  330  git status
+  331  git push origin user-can-delete-an-entry
+  332  git pulll origin main
+  333  git pull origin main
+  334  git pull origin main
+  335  git push origin user-can-delete-an-entry
+  336  git push origin user-can-delete-an-entry
+  337  git status
+  338  git pull origin main
+  339  git switch main
+  340  git pull origin main
+  341  git switch user-can-delete-an-entry 
+  342  git status
+  343  git add js
+  344  git stauts
+  345  git stauts
+  346  git status
+  347  git commit -m "added functionality to reset the image in confirm delete #4"
+  348  git push origin user-can-delete-an-entry
+  349  git switch main
+  350  git pull origin main
+  351  clear
+  352  git status
+  353  git add javascript-carousel/
+  354  git commit -m "updated code to include functional backward and forward presses. pending changing dot functionality"
+  355  git status
+  356  git add javascript-carousel/
+  357  git status
+  358  git commit -m "pending updates to all code"
+  359  git push origin javascript-carousel
+  360  git switch main
+  361  git branch http-messages
+  362  git switch http-messages
+  363  get https://example.com
+  364  http https://example.com
+  365  clear
+  366  http https://example.com
+  367  http --verbose https://example.com
+  368  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+  369  http --body GET https://example.com > http-messages/index.html
+  370  git status
+  371  git add http-messages/
+  372  git status
+  373  git status
+  374  git add http-messages/
+  375  git status
+  376  git commit -m "http-messages - Khanh Nguyen"
+  377  git push origin http-messages
+  378  git switch main
+  379  git pull origin main
+  380  clear
+  381  git branch javascript-new
+  382  git switch javascript-new
+  383  clear
+  384  git status
+  385  git add javascript-new/
+  386  git status
+  387  git commit -m "javascript-new - Khanh Nguyen"
+  388  git push origin javascript-new
+  389  git switch main
+  390  git pull origin main
+  391  clear
+  392  git branch es6-classes
+  393  git switch es6-classes 
+  394  clear
+  395  git status
+  396  git add es6-classes/
+  397  git status
+  398  git commit -m "es6-classes - Khanh Nguyen"
+  399  git push origin es6-classes 
+  400  git status
+  401  git add es6-classes/
+  402  git status
+  403  git commit -m "Revised es6-classes - Khanh Nguyen"
+  404  git push origin es6-classes
+  405  git status
+  406  git add es6-classes/
+  407  git status
+  408  git commit -m "Updated code based on change requested"
+  409  git push origin es6-classes
+  410  git switch 
+  411  git switch main
+  412  git switch javascript-carousel 
+  413  git status
+  414  git restore javascript-carousel/
+  415  git switch main
+  416  clear
+  417  git switch user-can-delete-an-entry 
+  418  git status
+  419  git restore js
+  420  git switch user-can-delete-an-entry 
+  421  git status
+  422  git switch main
+  423  git pull origin main
+  424  clear
+  425  git branch javascript-ajax
+  426  git switch javascript-ajax 
+  427  clear
+  428  git status
+  429  git add javascript-ajax/
+  430  git status
+  431  git commit -m "javascript-ajax - Khanh Nguyen"
+  432  git push origin javascript-ajax
+  433  git switch main
+  434  git pull origin main
+  435  git status
+  436  git commit -m "typescript-operators-and-expressions - Khanh Nguyen"
+  437  git push origin typescript-operators-and-expressions 
+  438  git switch main
+  439  git pull origin main
+  440  git switch objects-revisited
+  441  git status
+  442  git add objects-revisited/
+  443  git status
+  444  git commit -m "updated code into smaller functions and pending deletion functionality"
+  445  git status
+  446  git add objects-revisited
+  447  git status
+  448  git commit -m "objects-revisited - Khanh Nguyen"
+  449  git push origin objects-revisited
+  450  git switch main
+  451  git branch typescipt-objects
+  452  git switch typescipt-objects 
+  453  git branch -m typescript-objects
+  454  cd typescript-objects
+  455  npx tsc --watch main.ts
+  456  git status
+  457  git add typescript-functions/
+  458  git status
+  459  git commit -m "typescript-functions - Khanh Nguyen"
+  460  git push origin typescript-functions 
+  461  git switch main
+  462  git pull origin main
+  463  git status
+  464  git add typescript-objects/
+  465  git status
+  466  git commit -m "typescript-objects - Khanh Nguyen"
+  467  git push origin typescript-objects 
+  468  git switch main
+  469  git status
+  470  git status
+  471  git add typescript-objects/main.js 
+  472  git status
+  473  git commit -m "updated main.js"
+  474  git switch main
+  475  git status
+  476  git switch main
+  477  git branch typescript-functions
+  478  git switch typescript-functions
+  479  cd typescript-functions
+  480  npx tsc --watch main.ts
+  481  git status
+  482  git add unit-tests-jest/
+  483  git status
+  484  git commit -m "unit-tests-jest - Khanh Nguyen"
+  485  git branch unit-tests-jest
+  486  git switch unit-tests-jest 
+  487  cd unit-tests-jest
+  488  npm install
+  489  npm test
+  490  git branch typescript-algos
+  491  git switch typescript-algos 
+  492  cd typescript-algos
+  493  npm install
+  494  npm run test
+  495  git status
+  496  git add typescript-algos
+  497  git status
+  498  git commit -m "typescript-algos - Khanh Nguyen"
+  499  git push origin typescript-algos
+  500  git switch main
+  501  git switch typescript-algos
+  502  git switch main
+  503  git branch command-line-basics
+  504  git switch command-line-basics 
+  505  cd command-line-basics
+  506  cd command-line-basics
+  507  man man
+  508  man cat
+  509  cat laziness.txt
+  510  cat impatience.txt 
+  511  cat hubris.txt 
+  512  cat laziness.txt impatience.txt hubris.txt 
+  513  cat laziness.txt impatience.txt hubris.txt > three-virtues.text
+  514  cat three-virtues.text 
+  515  cat three-virtues.txt 
+  516  man ls
+  517  man ls
+  518  ls
+  519  ls -a
+  520  ls -F
+  521  ls -aF
+  522  ls -aF lfz-staff > lfz-staff/contents.txt
+  523  cat lfz-staff/contents.txt 
+  524  man pwd
+  525  pwd
+  526  pwd > i-was-here.txt
+  527  ls -aF
+  528  cat i-was-here.txt 
+  529  man echo
+  530  echo 'Hello World!'
+  531  echo 'Hello World!' > hello.txt
+  532  ls -aF
+  533  cat hello.txt 
+  534  man touch
+  535  man touch
+  536  touch tag-youre-it.txt
+  537  touch snoot/boop.txt
+  538  ls -aF snoot/
+  539  man mkdir
+  540  man mkdir
+  541  mkdir parent
+  542  ls -aF parent
+  543  mkdir -p parent/child/grandchild
+  544  touch parent/child/grandchild/.gitkeep
+  545  ls -a parent/child/grandchild/
+  546  man mv
+  547  mv pokiemans pokemon
+  548  ls -aF
+  549  man rm
+  550  rm lol.txt
+  551  ls -aF
+  552  rm -r kill-me/
+  553  ls -aF
+  554  man cp
+  555  man cp
+  556  cp and-then.txt no-and-then.txt
+  557  ls -aF
+  558  cat and-then.txt no-and-then.txt 
+  559  man history
+  560  history
+  561  history > command-history.txt
