@@ -39,8 +39,12 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.delete('/api/grades/:id', (req, res) => {
-  delete grades[+req.params];
-  res.sendStatus(204);
+  if (grades[+req.params.id]) {
+    delete grades[+req.params.id];
+    res.sendStatus(204);
+  } else {
+    res.sendStatus(404);
+  }
 });
 
 app.listen(8080, () => {
