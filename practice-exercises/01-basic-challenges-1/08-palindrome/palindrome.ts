@@ -1,20 +1,15 @@
 export function isPalindrome(str: string): boolean {
   const newStr = str.toLowerCase().split('');
+  const strArray: string[] = [];
   for (let i = 0; i < newStr.length; i++) {
-    if (newStr[i] === ' ' && newStr[i] === ',') {
-      newStr.splice(i, 1);
+    if (newStr[i] !== ' ' && newStr[i] !== ',') {
+      strArray.push(newStr[i]);
     }
   }
-  let left: number = 0;
-  let right: number = newStr.length - 1;
-
-  for (let i = 0; i < newStr.length; i++) {
-    if (newStr[left] !== newStr[right]) {
-      return false;
-    } else {
-      left++;
-      right--;
-    }
+  const updatedStr = strArray.join('');
+  let reversed = '';
+  for (let i = updatedStr.length - 1; i >= 0; i--) {
+    reversed += updatedStr[i];
   }
-  return true;
+  return updatedStr === reversed;
 }
