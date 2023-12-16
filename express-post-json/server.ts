@@ -25,10 +25,20 @@ app.use(express.json());
 
 app.post('/api/grades', (req, res) => {
   const added = req.body;
-  grades[nextId] = added;
-  added.id = nextId;
-  nextId++;
-  res.status(201).send(added);
+  const keysOfAdded = Object.keys(added);
+  if (
+    keysOfAdded.includes('name') &&
+    keysOfAdded.includes('course') &&
+    keysOfAdded.includes('score') &&
+    keysOfAdded.length === 3
+  ) {
+    grades[nextId] = added;
+    added.id = nextId;
+    nextId++;
+    res.status(201).json(added);
+  } else {
+    res.status(400).send('Invalid Inputs');
+  }
 });
 
 app.listen(8080, () => {
