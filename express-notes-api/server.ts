@@ -68,6 +68,24 @@ app.post('/api/notes', async (req, res) => {
   res.status(201).send(addedObj);
 });
 
+app.delete('/api/notes/:id', async (req, res) => {
+  const contentObj = await read();
+  const id = req.params.id;
+  if (+id < 0 || Number.isNaN(+id)) {
+    const error = { error: 'ID must be a positive integer' };
+    res.status(400).json(error);
+    return;
+  }
+  if (!contentObj.notes[id]) {
+    const error = { error: 'ID not found' };
+    res.status(404).json(error);
+    return;
+  }
+  delete contentObj.notes[id];
+  await write(contentObj);
+  res.sendStatus(204);
+});
+
 app.listen(8080, () => {
   console.log('Listening on 8080');
 });
