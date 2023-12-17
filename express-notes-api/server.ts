@@ -31,11 +31,17 @@ app.get('/api/notes', async (req, res) => {
 app.get('/api/notes/:id', async (req, res) => {
   const contentObj = await read();
   const id = req.params.id;
-  if (!contentObj.notes[id]) {
-    res.status(404).send('ID does not exist');
-  } else {
-    res.json(contentObj.notes[id]);
+  if (+id < 0) {
+    const error = { error: 'ID must be a positive interger' };
+    res.status(400).json(error);
+    return;
   }
+  if (!contentObj.notes[id]) {
+    const error = { error: 'ID does not exist' };
+    res.status(404).json(error);
+    return;
+  }
+  res.json(contentObj.notes[id]);
 });
 
 app.listen(8080, () => {
