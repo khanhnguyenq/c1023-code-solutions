@@ -23,6 +23,30 @@ async function write(data: Data): Promise<void> {
   await writeFile('data.json', JSON.stringify(data, null, 2), 'utf8');
 }
 
+type Error = {
+  error: string;
+};
+
+const errorCM = 'Content Missing';
+const errorNeID = 'Negative ID';
+const errorNoID = 'ID Missing';
+const errorMC = 'Multiple Contents';
+
+function errorMessage(error: string): Error {
+  switch (error) {
+    case errorCM:
+      return { error: 'content is a required field' };
+    case errorNeID:
+      return { error: 'ID must be a positive integer' };
+    case errorNoID:
+      return { error: 'Invalid ID' };
+    case errorMC:
+      return { error: 'Only one content is allowed' };
+    default:
+      return { error: 'Unexpected Error' };
+  }
+}
+
 app.get('/api/notes', async (req, res) => {
   const contentObj = await read();
   const notesArray: Note[] = [];
@@ -36,12 +60,12 @@ app.get('/api/notes/:id', async (req, res) => {
   const contentObj = await read();
   const id = req.params.id;
   if (+id < 0) {
-    const error = { error: 'ID must be a positive interger' };
+    const error = errorMessage(errorNeID);
     res.status(400).json(error);
     return;
   }
   if (!contentObj.notes[id]) {
-    const error = { error: 'ID does not exist' };
+    const error = errorMessage(errorNoID);
     res.status(404).json(error);
     return;
   }
@@ -51,12 +75,12 @@ app.get('/api/notes/:id', async (req, res) => {
 app.post('/api/notes', async (req, res) => {
   const contentObj = await read();
   if (!req.body.content) {
-    const error = { error: 'content is a required field' };
+    const error = errorMessage(errorCM);
     res.status(400).json(error);
     return;
   }
   if (Object.keys(req.body).length !== 1) {
-    const error = { error: 'Only one content is allowed' };
+    const error = errorMessage(errorMC);
     res.status(400).json(error);
     return;
   }
@@ -72,12 +96,12 @@ app.delete('/api/notes/:id', async (req, res) => {
   const contentObj = await read();
   const id = req.params.id;
   if (+id < 0 || Number.isNaN(+id)) {
-    const error = { error: 'ID must be a positive integer' };
+    const error = errorMessage(errorNeID);
     res.status(400).json(error);
     return;
   }
   if (!contentObj.notes[id]) {
-    const error = { error: 'ID not found' };
+    const error = errorMessage(errorNoID);
     res.status(404).json(error);
     return;
   }
