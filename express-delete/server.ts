@@ -39,8 +39,9 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.delete('/api/grades/:id', (req, res) => {
-  if (grades[+req.params.id]) {
-    delete grades[+req.params.id];
+  const id = +req.params.id;
+  if (grades[id]) {
+    delete grades[id];
     res.sendStatus(204);
   } else {
     res.sendStatus(404);
