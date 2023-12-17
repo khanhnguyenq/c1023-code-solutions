@@ -12,64 +12,50 @@ async function updateJSON(): Promise<void> {
   await writeFile('data.json', JSON.stringify(obj));
 }
 
-switch (operation) {
-  case 'read':
-    read();
-    break;
-  case 'create':
-    create();
-    break;
-  case 'update':
-    update();
-    break;
-  case 'delete':
-    remove();
-    break;
-  default:
-    throw Error('Invalid Operation');
+try {
+  switch (operation) {
+    case 'read':
+      await read();
+      break;
+    case 'create':
+      await create();
+      break;
+    case 'update':
+      await update();
+      break;
+    case 'delete':
+      await remove();
+      break;
+    default:
+      console.log('Invalid Operation');
+      process.exit(1);
+  }
+} catch (err) {
+  console.log('Error:', err);
 }
 
 async function read(): Promise<void> {
-  try {
-    for (const x in obj.notes) {
-      console.log(`${x}: ${obj.notes[x]}`);
-    }
-  } catch (err) {
-    console.log('Error:', err);
-    process.exit(1);
+  for (const x in obj.notes) {
+    console.log(`${x}: ${obj.notes[x]}`);
   }
 }
 
 async function create(): Promise<void> {
-  try {
-    const note: string = process.argv[3];
-    obj.notes[obj.nextId] = note.toString();
-    obj.nextId++;
-    updateJSON();
-  } catch (err) {
-    console.log('Error:', err);
-    process.exit(1);
-  }
+  const note: string = process.argv[3];
+  obj.notes[obj.nextId] = note.toString();
+  obj.nextId++;
+  updateJSON();
 }
 
 async function update(): Promise<void> {
-  try {
-    const number: number = +process.argv[3];
-    const newNote: string = process.argv[4];
-    obj.notes[number] = newNote;
-    updateJSON();
-  } catch (err) {
-    console.log('Error:', err);
-    process.exit(1);
-  }
+  const number: number = +process.argv[3];
+  const newNote: string = process.argv[4];
+  obj.notes[number] = newNote;
+  updateJSON();
 }
 
 async function remove(): Promise<void> {
-  try {
-    const number = +process.argv[3];
-    delete obj.notes[number];
-    updateJSON();
-  } catch (err) {
-    console.log('Error:', err);
-  }
+  const number = +process.argv[3];
+  delete obj.notes[number];
+  updateJSON();
 }
