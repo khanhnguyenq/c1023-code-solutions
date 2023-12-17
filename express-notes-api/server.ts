@@ -39,7 +39,7 @@ function errorMessage(error: string): Error {
     case errorNeID:
       return { error: 'ID must be a positive integer' };
     case errorNoID:
-      return { error: 'Invalid ID' };
+      return { error: 'The specific ID does not exist' };
     case errorMC:
       return { error: 'Only one content is allowed' };
     default:
@@ -108,6 +108,30 @@ app.delete('/api/notes/:id', async (req, res) => {
   delete contentObj.notes[id];
   await write(contentObj);
   res.sendStatus(204);
+});
+
+app.put('/api/notes/:id', async (req, res) => {
+  const contentObj = await read();
+  const id = req.params.id;
+  if (+id < 0 || Number.isNaN(+id)) {
+    const error = errorMessage(errorNeID);
+    res.status(400).json(error);
+    return;
+  }
+  if (!req.body.content) {
+    const error = errorMessage(errorCM);
+    res.status(400).json(error);
+    return;
+  }
+  if (!contentObj.notes[id]) {
+    const error = errorMessage(errorNoID);
+    res.status(404).json(error);
+    return;
+  }
+  contentObj.notes[id] = req.body;
+  contentObj.notes[id].id = +id;
+  await write(contentObj);
+  res.status(200).json(contentObj.notes[id]);
 });
 
 app.listen(8080, () => {
