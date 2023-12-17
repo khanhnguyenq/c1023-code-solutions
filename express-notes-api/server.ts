@@ -1,5 +1,5 @@
 import express from 'express';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 
 type Note = {
   id: number;
@@ -17,6 +17,10 @@ app.use(express.json());
 async function read(): Promise<Data> {
   const content = await readFile('data.json', 'utf8');
   return JSON.parse(content);
+}
+
+async function write(data: Data): Promise<void> {
+  await writeFile('data.json', JSON.stringify(data, null, 2), 'utf8');
 }
 
 app.get('/api/notes', async (req, res) => {
@@ -42,6 +46,26 @@ app.get('/api/notes/:id', async (req, res) => {
     return;
   }
   res.json(contentObj.notes[id]);
+});
+
+app.post('/api/notes', async (req, res) => {
+  const contentObj = await read();
+  if (!req.body.content) {
+    const error = { error: 'content is a required field' };
+    res.status(400).json(error);
+    return;
+  }
+  if (Object.keys(req.body).length !== 1) {
+    const error = { error: 'Only one content is allowed' };
+    res.status(400).json(error);
+    return;
+  }
+  const addedObj = req.body;
+  addedObj.id = contentObj.nextId;
+  contentObj.notes[contentObj.nextId] = addedObj;
+  contentObj.nextId++;
+  await write(contentObj);
+  res.status(201).send(addedObj);
 });
 
 app.listen(8080, () => {
