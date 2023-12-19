@@ -1,0 +1,15 @@
+                                         Table "public.actors"
+  Column   |           Type           | Collation | Nullable |                 Default                 
+-----------+--------------------------+-----------+----------+-----------------------------------------
+ actorId   | integer                  |           | not null | nextval('actor_actor_id_seq'::regclass)
+ firstName | text                     |           | not null | 
+ lastName  | text                     |           | not null | 
+ updatedAt | timestamp with time zone |           | not null | now()
+Indexes:
+    "actor_pkey" PRIMARY KEY, btree ("actorId")
+    "idx_actor_last_name" btree ("lastName")
+Referenced by:
+    TABLE ""castMembers"" CONSTRAINT "film_actor_actor_id_fkey" FOREIGN KEY ("actorId") REFERENCES actors("actorId") ON UPDATE CASCADE ON DELETE RESTRICT
+Triggers:
+    last_updated BEFORE UPDATE ON actors FOR EACH ROW EXECUTE FUNCTION last_updated()
+
