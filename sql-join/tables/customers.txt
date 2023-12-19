@@ -1,0 +1,25 @@
+                                           Table "public.customers"
+   Column   |           Type           | Collation | Nullable |                    Default                     
+------------+--------------------------+-----------+----------+------------------------------------------------
+ customerId | integer                  |           | not null | nextval('customer_customer_id_seq1'::regclass)
+ storeId    | smallint                 |           | not null | 
+ firstName  | text                     |           | not null | 
+ lastName   | text                     |           | not null | 
+ email      | text                     |           |          | 
+ addressId  | smallint                 |           | not null | 
+ isActive   | boolean                  |           | not null | true
+ createdAt  | date                     |           | not null | 'now'::text::date
+ updatedAt  | timestamp with time zone |           |          | now()
+Indexes:
+    "customer_pkey" PRIMARY KEY, btree ("customerId")
+    "idx_fk_address_id" btree ("addressId")
+    "idx_fk_store_id" btree ("storeId")
+    "idx_last_name" btree ("lastName")
+Foreign-key constraints:
+    "customer_address_id_fkey" FOREIGN KEY ("addressId") REFERENCES addresses("addressId") ON UPDATE CASCADE ON DELETE RESTRICT
+    "customer_store_id_fkey" FOREIGN KEY ("storeId") REFERENCES stores("storeId") ON UPDATE CASCADE ON DELETE RESTRICT
+Referenced by:
+    TABLE "rentals" CONSTRAINT "rental_customer_id_fkey" FOREIGN KEY ("customerId") REFERENCES customers("customerId") ON UPDATE CASCADE ON DELETE RESTRICT
+Triggers:
+    last_updated BEFORE UPDATE ON customers FOR EACH ROW EXECUTE FUNCTION last_updated()
+

@@ -1,0 +1,13 @@
+                                         Table "public.genres"
+  Column   |           Type           | Collation | Nullable |                 Default                 
+-----------+--------------------------+-----------+----------+-----------------------------------------
+ genreId   | integer                  |           | not null | nextval('genre_genre_id_seq'::regclass)
+ name      | text                     |           | not null | 
+ updatedAt | timestamp with time zone |           | not null | now()
+Indexes:
+    "genre_pkey" PRIMARY KEY, btree ("genreId")
+Referenced by:
+    TABLE ""filmGenre"" CONSTRAINT "film_genre_genre_id_fkey" FOREIGN KEY ("genreId") REFERENCES genres("genreId") ON UPDATE CASCADE ON DELETE RESTRICT
+Triggers:
+    last_updated BEFORE UPDATE ON genres FOR EACH ROW EXECUTE FUNCTION last_updated()
+

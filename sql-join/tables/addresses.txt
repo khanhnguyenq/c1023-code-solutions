@@ -1,0 +1,23 @@
+                                          Table "public.addresses"
+   Column   |           Type           | Collation | Nullable |                   Default                   
+------------+--------------------------+-----------+----------+---------------------------------------------
+ addressId  | integer                  |           | not null | nextval('address_address_id_seq'::regclass)
+ line1      | text                     |           | not null | 
+ line2      | text                     |           |          | 
+ district   | text                     |           | not null | 
+ cityId     | smallint                 |           | not null | 
+ postalCode | text                     |           |          | 
+ phone      | text                     |           | not null | 
+ updatedAt  | timestamp with time zone |           | not null | now()
+Indexes:
+    "address_pkey" PRIMARY KEY, btree ("addressId")
+    "idx_fk_city_id" btree ("cityId")
+Foreign-key constraints:
+    "address_city_id_fkey" FOREIGN KEY ("cityId") REFERENCES cities("cityId") ON UPDATE CASCADE ON DELETE RESTRICT
+Referenced by:
+    TABLE "customers" CONSTRAINT "customer_address_id_fkey" FOREIGN KEY ("addressId") REFERENCES addresses("addressId") ON UPDATE CASCADE ON DELETE RESTRICT
+    TABLE "staff" CONSTRAINT "staff_address_id_fkey" FOREIGN KEY ("addressId") REFERENCES addresses("addressId") ON UPDATE CASCADE ON DELETE RESTRICT
+    TABLE "stores" CONSTRAINT "store_address_id_fkey" FOREIGN KEY ("addressId") REFERENCES addresses("addressId") ON UPDATE CASCADE ON DELETE RESTRICT
+Triggers:
+    last_updated BEFORE UPDATE ON addresses FOR EACH ROW EXECUTE FUNCTION last_updated()
+

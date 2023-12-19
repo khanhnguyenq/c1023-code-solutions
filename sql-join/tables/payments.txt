@@ -1,0 +1,13 @@
+                                          Table "public.payments"
+   Column   |           Type           | Collation | Nullable |                   Default                   
+------------+--------------------------+-----------+----------+---------------------------------------------
+ paymentId  | integer                  |           | not null | nextval('payment_payment_id_seq'::regclass)
+ customerId | smallint                 |           | not null | 
+ staffId    | smallint                 |           | not null | 
+ rentalId   | integer                  |           | not null | 
+ amount     | numeric(5,2)             |           | not null | 
+ paidAt     | timestamp with time zone |           | not null | 
+Indexes:
+    "idx_fk_customer_id" btree ("customerId")
+    "idx_fk_staff_id" btree ("staffId")
+
