@@ -1,0 +1,17 @@
+                                        Table "public.cities"
+  Column   |           Type           | Collation | Nullable |                Default                
+-----------+--------------------------+-----------+----------+---------------------------------------
+ cityId    | integer                  |           | not null | nextval('city_city_id_seq'::regclass)
+ name      | text                     |           | not null | 
+ countryId | smallint                 |           | not null | 
+ updatedAt | timestamp with time zone |           | not null | now()
+Indexes:
+    "city_pkey" PRIMARY KEY, btree ("cityId")
+    "idx_fk_country_id" btree ("countryId")
+Foreign-key constraints:
+    "city_country_id_fkey" FOREIGN KEY ("countryId") REFERENCES countries("countryId") ON UPDATE CASCADE ON DELETE RESTRICT
+Referenced by:
+    TABLE "addresses" CONSTRAINT "address_city_id_fkey" FOREIGN KEY ("cityId") REFERENCES cities("cityId") ON UPDATE CASCADE ON DELETE RESTRICT
+Triggers:
+    last_updated BEFORE UPDATE ON cities FOR EACH ROW EXECUTE FUNCTION last_updated()
+
