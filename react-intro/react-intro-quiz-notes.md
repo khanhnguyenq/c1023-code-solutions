@@ -11,7 +11,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   a piece of the UI that has its own logic and appearance
 
 - How do you mount a React app (root component) to the DOM?
-  expeort default keywords
+  ReactDOM.createRoot().render()
 
 - What are some other popular frontend frameworks?
   React, Angular, Vue
