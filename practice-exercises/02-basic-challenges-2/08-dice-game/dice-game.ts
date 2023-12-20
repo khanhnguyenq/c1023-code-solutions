@@ -8,7 +8,7 @@ export type Simulation = {
 
 export function diceGameSimulation(numSimulations: number): Simulation[] {
   const resultsArray: Simulation[] = [];
-  function resultMessage(num: number): string {
+  function resultMessage(num: number): Simulation['result'] {
     switch (num) {
       case 7:
       case 11:
@@ -21,13 +21,21 @@ export function diceGameSimulation(numSimulations: number): Simulation[] {
         return 'roll again';
     }
   }
+  function rollDice(): DiceRoll {
+    return (Math.floor(Math.random() * 6) + 1) as DiceRoll;
+  }
   for (let i = 0; i < numSimulations; i++) {
-    const resultObj: Simulation = {};
-    const dice1 = Math.floor(Math.random() * 6) + 1;
-    const dice2 = Math.floor(Math.random() * 6) + 1;
-    const sum = dice1 + dice2;
-    const result = resultMessage(sum);
-    resultObj.dice1 = dice1;
+    const roll1 = rollDice();
+    const roll2 = rollDice();
+    const rollTotal = roll1 + roll2;
+    const message = resultMessage(rollTotal);
+
+    const resultObj: Simulation = {
+      dice1: roll1,
+      dice2: roll2,
+      sum: rollTotal,
+      result: message,
+    };
 
     resultsArray.push(resultObj);
   }
