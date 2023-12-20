@@ -76,7 +76,7 @@ app.post('/api/grades', async (req, res, next) => {
       );
     }
     const sql =
-      'INSERT INTO "grades" (course, name, score) VALUES($1, $2, $3) RETURNING *';
+      'INSERT INTO "grades" ("course", "name", "score") VALUES($1, $2, $3) RETURNING *';
     const params = Object.values(req.body);
     const result = await db.query(sql, params);
     res.json(result.rows[0]);
@@ -109,8 +109,8 @@ app.put('/api/grades/:gradeId', async (req, res, next) => {
     }
     const sql =
       'UPDATE "grades" SET "name" = $1, "course" = $2, "score" = $3 WHERE "gradeId" = $4 RETURNING *';
-    const inputValues = Object.values(req.body);
-    const params = [...inputValues, gradeId];
+    const values = req.body;
+    const params = [values.name, values.course, values.score, gradeId];
     const result = await db.query(sql, params);
     if (!result.rows[0]) {
       throw new ClientError(
