@@ -1,8 +1,8 @@
 type Props = {
   text: string;
-  color: string;
+  className: string;
 };
 
-export function CustomButton({ text, color }: Props) {
-  return <button className={color}>{text}</button>;
+export function CustomButton({ text, className }: Props) {
+  return <button className={className}>{text}</button>;
 }

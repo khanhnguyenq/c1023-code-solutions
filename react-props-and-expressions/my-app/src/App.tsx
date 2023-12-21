@@ -7,9 +7,9 @@ import { CustomButton } from './CustomButton';
 function App() {
   return (
     <div>
-      <CustomButton color={'green'} text={'I'} />
-      <CustomButton color={'blue'} text={'know'} />
-      <CustomButton color={'purple'} text={'React!'} />
+      <CustomButton className={'green'} text={'I'} />
+      <CustomButton className={'blue'} text={'know'} />
+      <CustomButton className={'purple'} text={'React!'} />
     </div>
   );
 }
