@@ -7,7 +7,7 @@ import { CustomButton } from './CustomButton';
 function App() {
   const [count, setCount] = useState(0);
   function handleCustomClick(text: string) {
-    alert(`${text}`);
+    alert(text);
   }
 
   return (
@@ -33,19 +33,19 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <CustomButton
-        className={'green'}
-        text={'Green Button'}
+        className="green"
+        text="Green Button"
         onCustomClick={handleCustomClick}
       />
       <CustomButton
-        className={'blue'}
-        text={'Blue Button'}
-        onCustomClick={(text: string) => alert(`${text}`)}
+        className="Blue"
+        text="Blue Button"
+        onCustomClick={handleCustomClick}
       />
       <CustomButton
-        className={'purple'}
-        text={'Purple Button'}
-        onCustomClick={(text: string) => alert(`${text}`)}
+        className="Purple"
+        text="Purple Button"
+        onCustomClick={handleCustomClick}
       />
     </>
   );
