@@ -1,12 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
-type Props = {
-  text: string;
-  className: string;
-};
-
-export function ToggleSwitch({ text, className }: Props) {
+export function ToggleSwitch() {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -15,9 +10,9 @@ export function ToggleSwitch({ text, className }: Props) {
         className={toggle ? 'circle-on' : 'circle-off'}
         onClick={() => setToggle(!toggle)}></div>
       <button
-        className={toggle ? 'on' : className}
+        className={toggle ? 'on' : 'off'}
         onClick={() => setToggle(!toggle)}></button>
-      <p>{toggle ? 'ON' : text}</p>
+      <p>{toggle ? 'ON' : 'OFF'}</p>
     </div>
   );
 }

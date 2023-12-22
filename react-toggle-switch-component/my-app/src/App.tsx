@@ -1,11 +1,7 @@
 import { ToggleSwitch } from './ToggleSwitch';
 
 function App() {
-  return (
-    <>
-      <ToggleSwitch text="OFF" className="off" />
-    </>
-  );
+  return <ToggleSwitch />;
 }
 
 export default App;
