@@ -17,7 +17,7 @@ export function ToggleSwitch({ text, className }: Props) {
       <button
         className={toggle ? 'on' : className}
         onClick={() => setToggle(!toggle)}></button>
-      <p style={{ paddingLeft: '10px' }}>{toggle ? 'ON' : text}</p>
+      <p>{toggle ? 'ON' : text}</p>
     </div>
   );
 }
