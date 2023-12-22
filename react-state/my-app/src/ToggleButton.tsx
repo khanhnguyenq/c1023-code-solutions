@@ -15,15 +15,10 @@ export function ToggleButton({ text, color }: Props) {
     console.log('value after calling setter:', isClicked);
   }
 
-  if (isClicked) {
-    return (
-      <button style={{ backgroundColor: color }} onClick={handleClick}>
-        {text}
-      </button>
-    );
-  }
   return (
-    <button style={{ backgroundColor: 'gray' }} onClick={handleClick}>
+    <button
+      style={{ backgroundColor: isClicked ? color : 'gray' }}
+      onClick={handleClick}>
       {text}
     </button>
   );
