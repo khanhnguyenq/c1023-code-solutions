@@ -1,0 +1,14 @@
+.circle {
+  border: solid #fff;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.toggle-button {
+  padding-top: 20px;
+}
