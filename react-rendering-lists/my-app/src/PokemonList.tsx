@@ -4,7 +4,7 @@ type Pokemon = {
 };
 
 export function PokemonList({ arr }: { arr: Pokemon[] }) {
-  const items = arr.map((i) => <li>{i.name}</li>);
+  const items = arr.map((i) => <li key={i.number}>{i.name}</li>);
 
   return <ul>{items}</ul>;
 }
