@@ -11,28 +11,26 @@ export function RegistrationFormControlled() {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="usernameCon">Username:</label>
-        <input
-          type="text"
-          name="password"
-          id="usernameCon"
-          value={userName}
-          onChange={(event) => setUserName(event.target.value)}
-        />
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="usernameCon">Username:</label>
+      <input
+        type="text"
+        name="password"
+        id="usernameCon"
+        value={userName}
+        onChange={(event) => setUserName(event.target.value)}
+      />
 
-        <label htmlFor="passwordCon">Password:</label>
-        <input
-          type="text"
-          name="password"
-          id="passwordCon"
-          value={passWord}
-          onChange={(event) => setPassWord(event.target.value)}
-        />
+      <label htmlFor="passwordCon">Password:</label>
+      <input
+        type="text"
+        name="password"
+        id="passwordCon"
+        value={passWord}
+        onChange={(event) => setPassWord(event.target.value)}
+      />
 
-        <button>Submit</button>
-      </form>
-    </>
+      <button>Submit</button>
+    </form>
   );
 }
