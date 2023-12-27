@@ -1,3 +1,3 @@
-export function CurrentName() {
-  return <span>Current Item</span>;
+export function CurrentName({ item }: { item: string }) {
+  return <span>{item}</span>;
 }
