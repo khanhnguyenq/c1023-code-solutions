@@ -19,6 +19,7 @@ export function StopWatch() {
   function clear() {
     if (idRef.current) {
       clearInterval(idRef.current);
+      idRef.current = null;
     }
   }
 
