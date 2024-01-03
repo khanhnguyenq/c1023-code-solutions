@@ -11,9 +11,9 @@ export function ValidatedInput() {
 
   const hasCapital = /[A-Z]/g.test(password);
 
-  let errorIcon = <ImCross className="invalid" />;
-  let errorColor = 'invalid';
-  let error = '';
+  let errorIcon;
+  let errorColor;
+  let error;
 
   if (length === 0) {
     errorIcon = <ImCross className="invalid" />;
