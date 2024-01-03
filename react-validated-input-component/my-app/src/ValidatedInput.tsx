@@ -7,46 +7,34 @@ export function ValidatedInput() {
 
   const length = password.length;
 
-  const includeDigit = /[0-9]/.test(password);
+  const hasDigit = /[0-9]/.test(password);
 
-  const includeCapital = /[A-Z]/g.test(password);
+  const hasCapital = /[A-Z]/g.test(password);
 
-  function updateError() {
-    if (
-      length === 0 ||
-      length < 8 ||
-      (length >= 8 && !includeDigit) ||
-      (length >= 8 && !includeCapital)
-    ) {
-      return <ImCross className="invalid" />;
-    } else {
-      return <FaCheck className="valid" />;
-    }
-  }
+  let errorIcon = <ImCross className="invalid" />;
+  let errorColor = 'invalid';
+  let error = '';
 
-  function updateTextColor() {
-    if (
-      length === 0 ||
-      length < 8 ||
-      (length >= 8 && !includeDigit) ||
-      (length >= 8 && !includeCapital)
-    ) {
-      return 'invalid';
-    } else {
-      return 'valid';
-    }
-  }
-
-  function updateText() {
-    return length === 0
-      ? 'A password is required.'
-      : length < 8
-      ? 'Your password is too short.'
-      : length >= 8 && !includeDigit
-      ? 'Your password needs a number.'
-      : length >= 8 && !includeCapital
-      ? 'Your password needs a capital letter.'
-      : '';
+  if (length === 0) {
+    errorIcon = <ImCross className="invalid" />;
+    errorColor = 'invalid';
+    error = 'A password is required.';
+  } else if (length < 8) {
+    errorIcon = <ImCross className="invalid" />;
+    errorColor = 'invalid';
+    error = 'Your password is too short.';
+  } else if (length >= 8 && !hasDigit) {
+    errorIcon = <ImCross className="invalid" />;
+    errorColor = 'invalid';
+    error = 'Your password needs a number.';
+  } else if (length >= 8 && !hasCapital) {
+    errorIcon = <ImCross className="invalid" />;
+    errorColor = 'invalid';
+    error = 'Your password needs a capital letter.';
+  } else {
+    errorIcon = <FaCheck className="valid" />;
+    errorColor = 'valid';
+    error = '';
   }
 
   return (
@@ -59,9 +47,9 @@ export function ValidatedInput() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <span className="padding-left">{updateError()}</span>
+        <span className="padding-left">{errorIcon}</span>
       </div>
-      <p className={updateTextColor()}>{updateText()}</p>
+      <p className={errorColor}>{error}</p>
     </div>
   );
 }
