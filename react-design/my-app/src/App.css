@@ -1,0 +1,24 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-to-column {
+  flex-direction: column;
+}
+
+.w-50 {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.blue {
+  background-color: aquamarine;
+}
