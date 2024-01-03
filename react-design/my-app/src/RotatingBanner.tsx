@@ -1,11 +1,5 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 
-type Props = {
-  index: number;
-  counter: number;
-  setCounter: Dispatch<SetStateAction<number>>;
-};
-
 export function RotatingBanner({ items }: { items: string[] }) {
   const [counter, setCounter] = useState(0);
 
@@ -36,6 +30,12 @@ export function RotatingBanner({ items }: { items: string[] }) {
 function CurrentName({ item }: { item: string }) {
   return <span>{item}</span>;
 }
+
+type Props = {
+  index: number;
+  counter: number;
+  setCounter: Dispatch<SetStateAction<number>>;
+};
 
 function PrevButton({ counter, setCounter, index }: Props) {
   return (
