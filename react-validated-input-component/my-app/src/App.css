@@ -1,0 +1,30 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-to-column {
+  flex-direction: column;
+}
+
+.padding-top-10 {
+  padding-top: 10px;
+}
+
+.invalid {
+  color: red;
+}
+
+.valid {
+  color: green;
+}
+
+.padding-left {
+  padding-left: 10px;
+}
