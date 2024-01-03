@@ -5,8 +5,8 @@ import { RegistrationFormControlled } from './RegistrationFormControlled';
 function App() {
   return (
     <>
-      <RegistrationFormUncontrolled />;
-      <RegistrationFormControlled />;
+      <RegistrationFormUncontrolled />
+      <RegistrationFormControlled />
     </>
   );
 }

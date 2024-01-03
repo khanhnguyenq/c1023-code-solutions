@@ -11,22 +11,15 @@ export function RegistrationFormUncontrolled() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="usernameUnCon">Username:</label>
-      <input
-        type="text"
-        id="usernameUnCon"
-        name="username"
-        placeholder="username"
-      />
+      <label>
+        Username:
+        <input type="text" name="username" placeholder="username" />
+      </label>
 
-      <label htmlFor="passwordUnCon">Password:</label>
-      <input
-        type="password"
-        id="passwordUnCon"
-        name="password"
-        placeholder="password"
-      />
-
+      <label>
+        Password:
+        <input type="password" name="password" placeholder="password" />
+      </label>
       <button type="submit">Submit</button>
     </form>
   );
