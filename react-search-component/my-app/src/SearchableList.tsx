@@ -34,6 +34,6 @@ function MakeList({ value, list }: Props) {
   const filterList = list.filter((i) =>
     i.toLowerCase().includes(value.toLowerCase())
   );
-  const items = filterList.map((i) => <li key={i}>{i}</li>);
+  const items = filterList.map((i, index) => <li key={index}>{i}</li>);
   return items.length > 0 ? <ul>{items}</ul> : <span>No Matching Item</span>;
 }
