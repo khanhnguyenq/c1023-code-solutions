@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 
 type Items = {
   id: number;
@@ -6,40 +6,35 @@ type Items = {
   content: string;
 };
 
-type List = {
-  arr: Items[];
-  toggle: boolean;
-  setToggle: Dispatch<SetStateAction<boolean>>;
-};
-
 export function Accordion({ arr }: { arr: Items[] }) {
-  const [toggle, setToggle] = useState(false);
-  return (
-    <>
-      <RenderTopic arr={arr} toggle={toggle} setToggle={setToggle} />
-    </>
-  );
+  const [id, setId] = useState(0);
+
+  const item = arr.map((i) => (
+    <RenderTopic item={i} key={i.id} id={id === i.id} setId={setId} />
+  ));
+  return item;
 }
 
-function RenderTopic({ arr, toggle, setToggle }: List) {
-  const numOfTopics = [];
-  for (let i = 0; i < arr.length; i++) {
-    numOfTopics.push(i);
-  }
+type List = {
+  item: Items;
+  id: boolean;
+  setId: (num: number) => void;
+};
 
-  const topic = numOfTopics.map((i) => (
+function RenderTopic({ item, id, setId }: List) {
+  return (
     <>
       <button
-        key={arr[i].id}
         onClick={() => {
-          setToggle(!toggle);
+          if (id === true) {
+            setId(0);
+          } else {
+            setId(item.id);
+          }
         }}>
-        {arr[i].title}
+        {item.title}
       </button>
-      <span className={arr[i].title} style={{ display: toggle ? '' : 'none' }}>
-        {arr[i].content}
-      </span>
+      <span style={{ display: id ? '' : 'none' }}>{item.content}</span>
     </>
-  ));
-  return topic;
+  );
 }
