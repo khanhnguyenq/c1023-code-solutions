@@ -32,4 +32,5 @@ p:hover {
 
 .menu {
   font-size: 3rem;
+  width: fit-content;
 }
