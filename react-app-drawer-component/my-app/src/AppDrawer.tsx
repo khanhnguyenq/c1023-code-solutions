@@ -7,6 +7,7 @@ type Props = {
 
 export function AppDrawer({ header }: Props) {
   const [opened, setOpened] = useState(false);
+  const [updateTitle, setUpdateTitle] = useState('No Selected Title');
 
   return (
     <div className={opened ? 'overlay' : 'no-overlay'}>
@@ -14,7 +15,7 @@ export function AppDrawer({ header }: Props) {
       <div
         onClick={() => setOpened(!opened)}
         className="flex row-to-column center-all">
-        <h1>No Title Selected</h1>
+        <h1>{updateTitle}</h1>
         <svg
           className="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +44,13 @@ export function AppDrawer({ header }: Props) {
         </svg>
       </div>
       <div className={opened ? 'titles-opened' : 'titles-closed'}>
-        <RenderList header={header} handleClick={() => setOpened(!opened)} />
+        <RenderList
+          header={header}
+          handleCustomClick={(i) => {
+            setUpdateTitle(i);
+            setOpened(!opened);
+          }}
+        />
       </div>
     </div>
   );
@@ -63,12 +70,12 @@ function MenuButton({ menuClick }: MenuButtonProps) {
 
 type RenderProps = {
   header: Props['header'];
-  handleClick: () => void;
+  handleCustomClick: (i: string) => void;
 };
 
-function RenderList({ header, handleClick }: RenderProps) {
+function RenderList({ header, handleCustomClick }: RenderProps) {
   const titles = header.map((i) => (
-    <p key={i} onClick={handleClick}>
+    <p key={i} onClick={() => handleCustomClick(i)}>
       {i}
     </p>
   ));
