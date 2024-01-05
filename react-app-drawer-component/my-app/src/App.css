@@ -1,6 +1,5 @@
 .overlay {
   background: rgba(0, 0, 0, 0.5);
-  z-index: 0;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -9,16 +8,38 @@
   pointer-events: all;
 }
 
-.titles {
-  position: relative;
-  top: -20px;
-  left: -7px;
+.no-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.titles-closed {
+  position: absolute;
+  top: 0;
   z-index: 1;
   background-color: #fff;
   color: #000;
   width: 300px;
   height: 100vh;
   text-align: center;
+  transform: translateX(-300px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.titles-opened {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  color: #000;
+  width: 300px;
+  height: 100vh;
+  text-align: center;
+  transform: translateX(0);
+  transition: transform 0.2s ease-in-out;
 }
 
 p {
@@ -32,5 +53,25 @@ p:hover {
 
 .menu {
   font-size: 3rem;
+  pointer-events: all;
   width: fit-content;
+}
+
+.icon,
+h1 {
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.row-to-column {
+  flex-direction: column;
+}
+
+.center-all {
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
 }
