@@ -10,31 +10,33 @@ export function Accordion({ arr }: { arr: Items[] }) {
   const [id, setId] = useState(0);
 
   const item = arr.map((i) => (
-    <RenderTopic item={i} key={i.id} id={id === i.id} setId={setId} />
+    <RenderTopic
+      item={i}
+      key={i.id}
+      boolean={id === i.id}
+      handleClick={() => {
+        if (id === i.id) {
+          setId(0);
+        } else {
+          setId(i.id);
+        }
+      }}
+    />
   ));
   return item;
 }
 
-type List = {
+type RenderTopicProps = {
   item: Items;
-  id: boolean;
-  setId: (num: number) => void;
+  boolean: boolean;
+  handleClick: () => void;
 };
 
-function RenderTopic({ item, id, setId }: List) {
+function RenderTopic({ item, boolean, handleClick }: RenderTopicProps) {
   return (
     <>
-      <button
-        onClick={() => {
-          if (id === true) {
-            setId(0);
-          } else {
-            setId(item.id);
-          }
-        }}>
-        {item.title}
-      </button>
-      <span style={{ display: id ? '' : 'none' }}>{item.content}</span>
+      <button onClick={handleClick}>{item.title}</button>
+      <span style={{ display: boolean ? '' : 'none' }}>{item.content}</span>
     </>
   );
 }
