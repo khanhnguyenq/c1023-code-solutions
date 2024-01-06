@@ -6,7 +6,7 @@ export function readItems(): Promise<Item[]> {
   return new Promise((resolve, reject) => {
     console.log('Reading items; this should only be called once!');
     setTimeout(() => {
-      Math.random() >= 0.2
+      Math.random() >= 0.5
         ? resolve([
             { id: 8, name: 'Harry Houdini' },
             { id: 12, name: 'Dorothy Dietrich' },
