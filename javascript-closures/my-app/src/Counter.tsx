@@ -10,7 +10,7 @@ export function Counter() {
   useEffect(() => {
     data;
     setCounter((prev) => prev + 1);
-  }, [data, setCounter]);
+  }, [data]);
 
   return <div>Fetching {counter} times</div>;
 }
