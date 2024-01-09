@@ -1,17 +1,16 @@
-/* eslint-disable react-hooks/exhaustive-deps -- Delete this line! */
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export function Counter() {
   const [counter, setCounter] = useState(0);
-  useEffect(() => {
-    getData();
-    setCounter((prev) => prev + 1);
-  }, [getData]);
-
-  function getData() {
+  const data = useCallback(function getData() {
     // fetch data
     return { foo: 'bar' };
-  }
+  }, []);
+
+  useEffect(() => {
+    data;
+    setCounter((prev) => prev + 1);
+  }, [data, setCounter]);
 
   return <div>Fetching {counter} times</div>;
 }
