@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { FaRegCircle } from 'react-icons/fa';
 import { FaCircle } from 'react-icons/fa';
+import { IoChevronForward } from 'react-icons/io5';
+import { IoChevronBack } from 'react-icons/io5';
 
 type Pictures = {
   src: string;
@@ -23,7 +25,7 @@ export function Carousel({ images }: CarouselProps) {
       }
     }, 3000);
     return () => clearInterval(id);
-  }, [currentImage, images, setCurrentImage]);
+  }, [currentImage, images]);
 
   return (
     <div className="container">
@@ -70,10 +72,10 @@ type ButtonProps = {
 };
 
 function Button({ label, onClick }: ButtonProps) {
-  return (
-    <button className="one-fifth" onClick={onClick}>
-      {label}
-    </button>
+  return label === 'Prev' ? (
+    <IoChevronBack onClick={onClick} />
+  ) : (
+    <IoChevronForward onClick={onClick} />
   );
 }
 
