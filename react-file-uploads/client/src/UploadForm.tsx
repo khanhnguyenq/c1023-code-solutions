@@ -7,6 +7,7 @@ type Image = {
 };
 
 export function UploadForm() {
+  const [error, setError] = useState<unknown>();
   const [imageFile, setImageFile] = useState<Image>();
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -17,11 +18,13 @@ export function UploadForm() {
         body: image,
       };
       const response = await fetch('/api/uploads', options);
+      if (!response.ok)
+        throw new Error(`${response.status} ${response.statusText}`);
       const result = await response.json();
       console.log(result);
       setImageFile(result);
     } catch (err) {
-      console.error(err);
+      setError(err);
     }
 
     /* Prevent the browser's default behavior for form submissions.
@@ -42,6 +45,14 @@ export function UploadForm() {
      */
   }
 
+  if (error) {
+    return (
+      <div>
+        Error uploading image:
+        {error instanceof Error ? error.message : 'Unknown Error'}
+      </div>
+    );
+  }
   return (
     <div className="container">
       <div className="row min-vh-100 pb-5 justify-content-center align-items-center">
